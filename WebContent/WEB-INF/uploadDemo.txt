@@ -1,0 +1,41 @@
+<div class="question-upload">
+	<form id="form-upload">
+		<div>
+			<p>题目类型：</p>
+			<select>
+				<option value="选择">选择题</option>
+				<option value="填空">填空题</option>
+				<option value="判断">判断题</option>
+				<option value="解答">解答题</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			题目分组：
+			<select id="group1">
+				<option value="" >请选择</option>
+			</select>
+			<select id="group2">
+				<option value="" >请选择</option>
+			</select>
+			<select id="group3">
+				<option value="" >请选择</option>
+			</select>
+		</div>
+		<div>
+			<p>题目标题：</p><input type="text" name="" id="text-queTitle" value="" />
+		</div>
+		<div>
+			<p>题目问题：</p>
+			<textarea rows="5" ></textarea>
+		</div>
+		<di>
+			<p>题目答案：</p>
+			<textarea rows="5" ></textarea>
+		</di>
+		<div>							
+			<p>题目解析：</p>
+			<textarea rows="5" ></textarea>
+		</div>
+		<input type="button" name="" class="submit-upload" value="重新上传" />
+		<input type="button" name="" id="" value="收起" />
+	</form>					
+</div>

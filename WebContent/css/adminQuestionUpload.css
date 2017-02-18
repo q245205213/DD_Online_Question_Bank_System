@@ -1,0 +1,49 @@
+#form-upload>div:nth-child(4) p,#form-upload>div:nth-child(5) p,#form-upload>div:nth-child(6) p{
+	margin-top: 0px;
+}
+.question-upload {
+	margin-left:10%;
+}
+#form-upload p {
+	float: left;
+	/*position: relative;*/
+	margin-bottom: 0;
+}
+#submit-upload{
+	width:120px;
+	margin:0 38% 20px ;
+}
+#form-upload textarea {
+	margin: 15px 0;
+}
+
+#text-queTitle{
+	width: 74%;
+	margin: 15px 0;
+}
+
+#form-upload>div:first-child {
+	margin-top: 10px;
+	width: 200px;
+	/*float: left;*/
+}
+
+#group1 option {
+	text-align: right;
+}
+
+#editor1, #editor2, #editor3 {
+	width: 75%;
+	height: 100px;
+	margin-top: 15px;
+	border: solid 1px;
+	background-color: white;
+}
+
+select {
+	cursor: pointer;
+	margin-top: 15px;
+}
+.textareBox{
+	margin-bottom: 15px;
+}

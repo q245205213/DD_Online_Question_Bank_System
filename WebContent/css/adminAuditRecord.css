@@ -1,0 +1,76 @@
+#infomation .div-1 {
+	margin: 5% 10% 0;
+	background-color: #F1F9E9;
+	padding: 10px;
+	border-style: ridge;
+}
+.queContent{
+	margin:-34px 0 0 80px;
+}
+.textarea1,.textarea2,.textarea3{
+	margin:20px  0 0 -80px;
+	/* display:none; */
+}
+.form-upload p {
+	/*position: relative;*/
+	margin-bottom: 0;
+}
+.form-upload select {
+	margin: 15px 0 0;
+}
+
+.text-queTitle{
+	width: 90%;
+	margin: 15px 0;
+}
+.form-upload {
+	background-color: #F1F9E9;
+	padding: 10px;
+	border-style: ridge;
+	border-top-style: none;
+}
+
+.form-upload textarea {
+	width: 85%;
+}
+
+.passButton{
+	width:80px; 
+	margin:20px 60% 0 0;
+}
+.noPassButton{	
+	width:100px; 
+	position: absolute;	
+	margin-left:-34%;
+	margin-top:-22px;
+}
+.recordHide {
+	position: absolute;
+	margin: -35px 35%;
+}
+.user-infomation {
+	padding-bottom: 50px;
+}
+.question-upload {
+	margin-right: 10%;
+	margin-top: -5px;
+	display: none;
+}
+
+.editor11, .editor22, .editor33 {
+	width: 80%;
+	height: 100px;
+	margin-top: 15px;
+	border: solid 1px;
+	background-color: white;
+}
+
+select {
+	cursor: pointer;
+}
+.label{
+	position:absolute;
+	padding: 2.5% 90px;
+	color:black;
+	font-size: 10px;
+}

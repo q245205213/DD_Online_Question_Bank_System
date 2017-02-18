@@ -1,0 +1,20 @@
+#tab-collection {
+	border: 1px solid #C1A9A9;
+	border-collapse: collapse;
+	margin: 5% 5%;
+}
+
+#tab-collection td, #tab-collection th {
+	padding: 5px 10px;
+}
+
+#tab-collection td {
+	text-align: center;
+}
+
+#th-three {
+	width: 450px;
+}
+#th-four {
+	width: 100px;
+}

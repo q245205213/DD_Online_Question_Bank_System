@@ -1,0 +1,73 @@
+#infomation .div-1 {
+	margin: 5% 10% 0;
+	background-color: #FAFAD2;
+	padding: 10px;
+	border-style: ridge;
+}
+.queContent{
+	margin:-34px 0 0 80px;
+}
+.textarea1,.textarea2,.textarea3{
+	margin:20px  0 0 -80px;
+	/* display:none; */
+}
+.form-upload p {
+	/*position: relative;*/
+	margin-bottom: 0;
+}
+.submit-upload{/* 
+	width:100px; */
+	margin-top: 10px;
+	margin-left: 35%;
+}
+
+.form-upload select {
+	margin: 15px 0 0;
+}
+
+.text-queTitle{
+	width: 90%;
+	margin: 15px 0;
+}
+.form-upload {
+	background-color: #FAFAD2;
+	padding: 10px;
+	border-style: ridge;
+	border-top-style: none;
+}
+
+.form-upload div input, .form-upload textarea {
+	width: 85%;
+}
+
+.user-infomation {
+	padding-bottom: 50px;
+}
+.question-upload {
+	margin-right: 10%;
+	margin-top: -5px;
+	display: none;
+}
+
+.recordHide {
+	position: absolute;
+	margin: -34px 40%;
+}
+
+.editor11, .editor22, .editor33 {
+	width: 80%;
+	height: 100px;
+	margin-top: 15px;
+	border: solid 1px;
+	background-color: white;
+}
+
+select {
+	cursor: pointer;
+}
+.label{
+	position:absolute;
+	margin: 30px 90px;
+	color:black;
+	font-size: 10px;
+}

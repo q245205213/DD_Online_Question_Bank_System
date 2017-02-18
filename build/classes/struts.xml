@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 指定struts.xml文件的根元素 -->
+<struts>
+	<!-- 配置包，包名为default，该包继承了Struts2框架的默认包struts-default -->
+	<!-- <package name="default" namespace="/" extends="struts-default"> 定义名为hello的Action，该Action的处理类为com.action.TestAction,并映射到success.jsp页面 
+		<action name="hello" class="com.action.TestAction"> <result>/success.jsp</result> 
+		</action> </package> -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.il8n.encoding" value="UTF-8"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="default"  extends="struts-default">
+		<interceptors>
+			<interceptor name="user_state" class="com.action.User_state"></interceptor>
+			<interceptor name="UserLoginState" class="com.action.UserLoginState"></interceptor>
+			<interceptor-stack name="AlldefaultStack">
+				<interceptor-ref name="user_state"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="MydefaultStack">
+				<interceptor-ref name="UserLoginState"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="AlldefaultStack"></default-interceptor-ref>
+		<default-action-ref name="defaultAction"></default-action-ref>
+		
+		<global-results>
+			<result name="false">/WEB-INF/login.jsp</result>
+			<result name="success">/WEB-INF/index.jsp</result>
+		</global-results>
+		
+		<action name="defaultAction" class="com.action.User_state">
+			<result name="false">/WEB-INF/login.jsp</result>
+		</action>
+		<action name="login" class="com.action.UserAction" method="login">
+			<interceptor-ref name="MydefaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/login.jsp</result>
+		</action>
+		<action name="logo_index" class="com.action.UserAction" method="logo_index">
+			<result name="success">/WEB-INF/index.jsp</result>
+		</action>
+		<action name="personalCenter" class="com.action.PageJump" method="personalCenter">
+			<result name="success">/WEB-INF/personalCenter.jsp</result>
+		</action>
+		<action name="questionUpload" class="com.action.PageJump" method="questionUpload">
+			<result name="success">/WEB-INF/questionUpload.jsp</result>
+		</action>
+		<action name="collectionRecord" class="com.action.CollectionRecordReturn" method="collectionRecordReturn">			
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/collectionRecord.jsp</result>
+		</action>
+		<action name="uploadRecord" class="com.action.UploadRecordReturn" method="uploadRecordReturn">	
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/uploadRecord.jsp</result>
+		</action>		
+		<action name="commentRecord" class="com.action.CommentRecordReturn" method="commentRecordReturn">		
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/commentRecord.jsp</result>
+		</action>
+		
+		
+		<action name="primarySchool" class="com.action.PrimarySchool" method="primarySchool">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/primarySchool.jsp</result>
+		</action>		
+		<action name="middleSchool" class="com.action.MiddleSchool" method="middleSchool">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/middleSchool.jsp</result>
+		</action>		
+		<action name="university" class="com.action.University" method="university">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="group2_1">/WEB-INF/university.jsp</result>
+			<result name="group2_2">/WEB-INF/university2.jsp</result>
+			<result name="group2_3">/WEB-INF/university3.jsp</result>
+			<result name="group2_4">/WEB-INF/university4.jsp</result>
+			<result name="group2_5">/WEB-INF/university5.jsp</result>
+			<result name="group2_6">/WEB-INF/university6.jsp</result>
+			<result name="group2_7">/WEB-INF/university7.jsp</result>
+		</action>		
+		<action name="socialProfession" class="com.action.SocialProfession" method="socialProfession">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/socialProfession.jsp</result>
+		</action>
+		
+		<action name="userInformation" class="com.action.UserInformation" method="userInformation">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/personalCenter.jsp</result>
+		</action>
+		
+		<action name="questionUpload2" class="com.action.QuestionUpload" method="questionUpload">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/uploadRecord.jsp</result>
+		</action>
+		
+		
+		<action name="uploadRecord2" class="com.action.UploadRecord" method="uploadRecord">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/uploadRecord.jsp</result>
+		</action>
+		
+		<action name="collection" class="com.action.Collection" method="collection">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="comment" class="com.action.Comment" method="comment">
+			<interceptor-ref name="defaultStack"></interceptor-ref>			
+			<result name="success">/WEB-INF/commentRecord.jsp</result>
+		</action>
+			
+		<action name="adminAuditRecord" class="com.action.AdminAuditRecord">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminAuditRecord.jsp</result>
+		</action>
+		<action name="adminAuditRecordReturn" class="com.action.AdminAuditRecordReturn" method="adminAuditRecordReturn">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminAuditRecord.jsp</result>
+		</action>
+		<action name="adminQuestionUpload" class="com.action.PageJump" method="adminQuestionUpload">
+			<result name="success">/WEB-INF/adminQuestionUpload.jsp</result>
+		</action>
+		<action name="AdminQuestionUpload2" class="com.action.AdminQuestionUpload" method="adminQuestionUpload">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminUploadRecord.jsp</result>
+		</action>
+		<action name="adminUploadRecord" class="com.action.AdminUploadRecord" method="adminUploadRecord">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminUploadRecord.jsp</result>
+		</action>
+		<action name="adminUploadRecordReturn" class="com.action.AdminUploadRecordReturn" method="adminUploadRecordReturn">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminUploadRecord.jsp</result>
+		</action>	
+		<action name="adminAuditPass" class="com.action.AdminAuditPass" method="adminAuditPass">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminAuditPass.jsp</result>
+		</action>
+		<action name="adminAuditPassReturn" class="com.action.AdminAuditPassReturn" method="adminAuditPassReturn">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminAuditPass.jsp</result>
+		</action>
+		
+		<action name="regist" class="com.action.UserAction" method="regist">
+			<interceptor-ref name="MydefaultStack"></interceptor-ref>
+		</action>
+		<action name="regist_user" class="com.action.UserAction" method="checkUser">
+			<interceptor-ref name="MydefaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="cancel" class="com.action.UserAction" method="cancel">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/login.jsp</result>
+		</action>	
+		
+		<action name="deleteUploadRecord" class="com.action.DeleteUploadRecord" method="deleteUploadRecord">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/uploadRecord.jsp</result>
+		</action>	
+		<action name="deleteAdminUploadRecord" class="com.action.DeleteAdminUploadRecord" method="deleteAdminUploadRecord">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminUploadRecord.jsp</result>
+		</action>	
+		<action name="deleteAdminAuditPass" class="com.action.DeleteAdminAuditPass" method="deleteAdminAuditPass">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/adminAuditPass.jsp</result>
+		</action>
+		<action name="deleteCollectionRecord" class="com.action.DeleteCollectionRecord" method="deleteCollectionRecord">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/collectionRecord.jsp</result>
+		</action>	
+		<action name="lookupQuestion" class="com.action.LookupQuestion" method="lookupQuestion">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/collectionRecord.jsp</result>
+			<result name="primarySchool">/WEB-INF/primarySchool.jsp</result>
+			<result name="middleSchool">/WEB-INF/middleSchool.jsp</result>
+			<result name="socialProfession">/WEB-INF/socialProfession.jsp</result>
+			<result name="university">/WEB-INF/university.jsp</result>
+			<result name="university2">/WEB-INF/university2.jsp</result>
+			<result name="university3">/WEB-INF/university3.jsp</result>
+			<result name="university4">/WEB-INF/university4.jsp</result>
+			<result name="university5">/WEB-INF/university5.jsp</result>
+			<result name="university6">/WEB-INF/university6.jsp</result>
+			<result name="university7">/WEB-INF/university7.jsp</result>
+		</action>	
+	</package>
+</struts>

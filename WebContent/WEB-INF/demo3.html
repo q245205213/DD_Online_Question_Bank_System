@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jquery get tag value</title>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+</head>
+<script type="text/javascript">  
+        $(document).ready(function(){  
+            var $temp=$('p').html();  
+            alert($temp);  
+            var $temp=$(".class1").html();  
+            alert($temp);  
+              
+            var $temp=$("#id1").html();  
+          alert($temp);   
+              
+              
+            });  
+          
+        </script>
+<body>
+	<h1>jquery get tag value</h1>
+	<p>thisa paragrap1</p>
+	<div class="class1">this is class='class1'</div>
+	<div id="id1">this is id='id1'</div>
+</body>
+</html>

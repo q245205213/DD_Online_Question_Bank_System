@@ -1,0 +1,80 @@
+body {
+	background-image: url(../img/4.jpg);
+}
+
+.operation {
+	margin: 25px 0 0 5%;
+	height: 168px;
+	width: 120px;
+	/*background-color: #DCC2C2;*/
+	position: absolute;
+	box-shadow: 5px 5px 30px;
+	background-color: rgba(87, 109, 189, 0.9);
+	border-top: 1px solid white;
+	color: black;
+}
+
+.operation ul {
+	margin: 0;
+	padding: 0;
+}
+
+.operation li {
+	border-bottom: 1px solid white;
+	float: left;
+}
+
+.operation a {
+	padding-top: 11px;
+	text-decoration: none;
+	display: block;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+	color: white;
+	font-weight: 800;
+}
+
+.operation a:hover {
+	background-color: white;
+	color: #6478C2;
+}
+
+.user-infomation {
+	height: 100%;
+	width: 75%;
+	box-shadow: 5px 5px 30px;
+	background-color: rgba(255, 255, 255, 0.9);
+	float: right;
+	margin: 25px 5%;
+	color: #735252;
+}
+
+.infomation {
+	margin: 10% 0 0 38%;
+	color: #705959;
+	position: relative;
+}
+
+.infomation div, .infomation form {
+	float: left;
+	margin-bottom: 150px;
+}
+
+#modify-ui form {
+	float: left;
+	/*background-color: blue;*/
+	width: 200px;
+}
+
+#form-infomation input {
+	margin: 12px 0 0;
+}
+
+#modify-ui {
+	display: none;
+}
+
+.button {
+	cursor: pointer;
+}

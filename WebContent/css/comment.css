@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+.div-comment>div:first-child {
+	border-top: 1px dashed;
+	border-bottom: 1px dashed;
+	margin: 20px -20px 0;
+	padding: 0 20px;
+}
+.blockBottom ul {
+	margin-left: 0;
+	padding-top: 5px;
+}
+
+
+.blockBottom li {
+	float: left;
+	font-size: 14px;
+	margin-right: 40px;
+}
+
+.blockBottom li:first-child {
+	margin-left: -20px;
+}
+
+.blockBottom li a {
+	text-decoration: none;
+	display: block;
+}
+
+.blockBottom li:last-child {
+	float: right;
+}
+
+.blockBottom li a:hover {
+	color: red;
+}
+.blockBottom li img{
+	position:absolute;
+	margin:-2px 0 0 2px;
+}
+
+.question-content>div>div:nth-child(2) {
+	margin-top: 30px;
+	display: none;
+}
+
+
+
+.div-comment form div {	
+	text-align: center;
+	margin: 10px 0 15px;
+	/*border: dashed;*/
+}
+
+.div-comment form p:nth-child(2) {
+	float: left;
+	margin: 0;
+}
+
+.comment {
+	display: none;
+}
+.collectionSuccess{
+	background-color: #fefefe;
+	position: fixed;
+	top:30%;
+	left:35%;
+	width:200px;
+	height: 100px;
+	text-align: center;
+	padding-top: 20px; 
+	border: 2px ridge ;
+	display: none;
+}
+.star li{
+	float: left;
+	width: 23px;
+	height: 20px;
+	cursor: pointer;
+}
+.star{
+	margin:0;
+	height: 20px;
+	width: 170px;
+	position: relative;
+	padding-top: 13px;
+}
+.commentReply>p:first-child{
+	float: left;	
+}
+.comment0{
+	float: left;	
+	margin-top: 0;
+}
+.score{
+	position: absolute;
+	margin:-18px 0 0 120px;
+}
+.score2{
+	float:left;
+}

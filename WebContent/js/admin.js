@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+$(document).ready(function(){
+	/*$("#cancel").click(function(){
+		window.location="cancel";
+	});*/
+	/*$("#logo_index").click(function(){
+		window.location="logo_index";
+	});*/
+/*	$(".adminUploadRecord").click(function(){
+		window.location="adminUploadRecord";
+	});
+	$(".adminQuestionUpload").click(function(){
+		window.location="adminQuestionUpload";
+	});
+	$(".adminAuditRecord").click(function(){
+		window.location="adminAuditRecord";
+	});
+	$(".adminAuditPass").click(function(){
+		window.location="adminAuditPass";
+	});*/
+})

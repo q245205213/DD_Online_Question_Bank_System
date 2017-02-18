@@ -1,0 +1,147 @@
+body {
+	margin: 0;
+	padding: 0;
+	/*	background-color: #f8f8f8;*/
+	background-image: url(../img/4.jpg);
+}
+/*#img{
+	position: relative;
+	left: 15%;
+	float: left;
+}*/
+#login_title {
+	height: 100px;
+	width: 100%;
+	border-bottom: 1px solid #CECACA;
+	margin: 0;
+	padding: 0;
+}
+
+#title {
+	text-align: center;
+	text-shadow: 1px 1px 5px;
+	font-size: 65px;
+	font-family: "楷体";
+	color: #F8F8F8;
+	margin-top: 15px;
+}
+
+#content {
+	/*background-color: whitesmoke;*/
+	height: 400px;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 0px 50px;
+	color: white;
+}
+
+#login {
+	float: left;
+	position: relative;
+	/*border: 1px solid darkseagreen;*/
+	padding: 20px;
+	/*background-color:  #EAEAEA;*/
+}
+
+#login1 {
+	float: left;
+	position: relative;
+	left: 40%;
+	top: 25%;
+	box-shadow: 10px 10px 35px;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: black;
+}
+
+#regist {
+	float: left;
+	position: relative;
+	/*border: 1px solid darkseagreen;*/
+	padding: 20px;
+	/*background-color:  #EAEAEA;*/
+	display: none;
+}
+
+#regist_result {
+	/* float: :left;
+	position: relative;; */
+	display: none;
+	height: 200px;
+	width: 290px;
+}
+
+#title2 {
+	position: relative;
+	margin: 20px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	float: left;
+	width: 125px;
+}
+
+a {
+	display: block;
+	border-bottom: 1px solid #778899;
+	font-size: 19px;
+	text-decoration: none;
+	color: #786775;
+	text-align: center;
+	text-shadow: 3px 3px 5px;
+	padding-bottom: 5px;
+}
+
+a:hover {
+	color: blue;
+}
+
+a:visited a:active {
+	text-decoration: underline;
+}
+
+label {
+	font-size: 14px;
+	/* 	position: relative;
+	float: left; */
+	color: #6f6868;
+}
+
+#regist label {
+	padding-left: 0px;
+}
+
+.submit {
+	font-size: 15px;
+	margin: 10px;
+	padding: 2px 25px;
+	color: #504b4b;
+	font-weight: bold;
+	/* background-color: #C3BCBC; */
+	font-family: "楷体";
+	cursor: pointer;
+	text-align: center;
+}
+
+.good {
+	/* position:relative; */
+	text-align: center;
+}
+
+.into {
+	position: relative;
+	float: right;
+	padding: 10px 20px;
+}
+
+p {
+	margin: 50px 10px;
+	text-shadow: 3px 3px 15px;
+	font-size: 20px;
+	font-family: "楷体";
+	color: #485460;
+}

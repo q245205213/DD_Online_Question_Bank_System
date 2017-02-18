@@ -1,0 +1,214 @@
+body {
+	background-image: url(../img/7.jpg);
+}
+
+.group-primary li>a {
+	color: #CD51F7;
+	font-size: 24px;
+	text-decoration: none;
+	display: block;
+	width: 120px;
+	height: 41px;
+	background-color: white;
+	padding-top: 10px;
+	font-weight: bold;
+}
+
+.group-primary div {
+	float: left;
+}
+
+.group-primary ul {
+	padding: 0;
+}
+
+.group-primary div:first-child a {
+	background-color: #A016CE;
+	color: #F7F7FF;
+}
+
+.group-primary div:last-child a:hover {
+	background-color: #CD51F7;
+	color: #F7F7FF;
+}
+
+.group-primary {
+	position: absolute;
+	top: 10px;
+	left: 8%;
+	z-index: 1;
+}
+
+.group-primary li {
+	box-shadow: 0 0 10px;
+	color: #B8B8FF;
+	text-align: center;
+}
+
+.group-primary div:last-child {
+	display: none;
+	/*float: left;*/
+}
+
+.operation {
+	margin: 9% 0 0 8%;
+	height: 293px;
+	width: 120px;
+	/*background-color: #DCC2C2;*/
+	position: absolute;
+	box-shadow: 5px 5px 30px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-top: 1px solid #CD51F7;
+	color: #635252;
+}
+
+.operation ul {
+	margin: 0;
+	padding: 0;
+}
+
+.operation li {
+	border-bottom: 1px solid #CD51F7;
+	float: left;
+}
+
+.operation li:nth-child(2) a {
+	padding: 3px 0 8px 0;
+}
+
+.operation a {
+	padding-top: 11px;
+	text-decoration: none;
+	display: block;
+	height: 30px;
+	width: 120px;
+	text-align: center;
+	color: #776A6A;
+	font-weight: 800;
+}
+
+.operation a:hover {
+	background-color: #CD51F7;
+	color: white;
+}
+
+.user-infomation {
+	height: 100%;
+	width: 75%;
+	box-shadow: 5px 5px 30px;
+	background-color: rgba(255, 255, 255, 0.9);
+	float: right;
+	margin: 25px 8%;
+	color: #735252;
+}
+
+.category {
+	/*float: right;*/
+	margin: 25px 0 100px 19%;
+	/*background-color:rgba(255,255,255,0.9);*/
+}
+/*…………………………分类…………………………*/
+.category ul {
+	width: 91%;
+}
+
+.category li:nth-child(7) a, .category li:nth-child(8) a, .category li:nth-child(9) a,
+	.category li:nth-child(10) a {
+	padding: 3px 5px 8px;
+}
+
+.category2 li:nth-child(7) a, .category2 li:nth-child(8) a, .category2 li:nth-child(9) a
+	{
+	padding: 10px 5px 1px;
+}
+
+.category3 li:nth-child(7) a, .category3 li:nth-child(8) a, .category3 li:nth-child(9) a,
+	.category3 li:nth-child(10) a {
+	padding: 10px 5px 1px;
+}
+
+.category5 li:nth-child(9) a, .category5 li:nth-child(10) a {
+	padding: 10px 5px 1px;
+}
+/*…………………………以上是分类………………………………*/
+.category li {
+	float: left;
+	/*margin-right: 100px;*/
+	text-align: center;
+	border-right: 1px solid;
+	border-color: #CD51F7;
+	box-shadow: 0 2px 5px;
+	color: #6F768E;
+}
+
+.category a {
+	display: block;
+	height: 30px;
+	width: 120px;
+	text-decoration: none;
+	/*font-size: 20px;*/
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 10px 5px 1px;
+	font-weight: bold;
+	color: #CD51F7;
+	margin: 1px 0;
+	padding:;
+}
+
+.category a:hover {
+	background-color: #CD51F7;
+	color: white;
+}
+
+.question-content>div {
+	background-color: rgba(255, 255, 255, 0.95);
+	width: 85%;
+	height: 20%;
+	margin: auto;
+	margin-top: 20px;
+	border-style: ridge;
+	border-color: #A07CC2;
+	box-shadow: 0 2px 5px;
+	color: #504343;
+	padding: 20px;
+}
+
+.question-content>p:first-child {
+	color: #000000;
+	margin-left: 5%;
+	border-bottom: 1px solid;
+	padding-bottom: 3px;
+	width: 90%;
+	margin-top: 10px;
+}
+
+.question-content>p:nth-child(2) {
+	color: #000000;
+	margin-left: 5%;
+	font-weight: bold;
+	padding-bottom: 3px;
+	margin-top: 0;
+	float: left;
+}
+
+select {
+	cursor: pointer;
+}
+/*…………………………………………*/
+.question-content {
+	width: 70%;
+	height: 100%;
+	float: right;
+	margin: 3% 6.5%;
+	padding-bottom: 3%;
+	background-color: rgba(127, 63, 179, 0.5);
+	box-shadow: 0 0 50px;
+	color: #A07CC2;
+}
+
+.question-content>div>div:first-child>div:last-child {
+	height: 25px;
+	background-color: #DFBCFF;
+	margin: 10px -20px -20px;
+	padding: 0 0 0;
+}
