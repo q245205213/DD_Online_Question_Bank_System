@@ -50,6 +50,8 @@ public class AdminAuditRecord extends ActionSupport {
 			dao.executeUpdate(sql5);
 		}
 		aarr.adminAuditRecordReturn();
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 
@@ -65,6 +67,8 @@ public class AdminAuditRecord extends ActionSupport {
 			dao.executeUpdate(sql5);
 		}
 		aarr.adminAuditRecordReturn();
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 }

@@ -138,9 +138,12 @@ public class AdminAuditPassReturn extends ActionSupport {
 			String adminAuditPass = "";
 			adminAuditPasses.add(adminAuditPass);
 			session.put("adminAuditPasses",adminAuditPasses);
-//			session.put("i", "");
+			dao.allClose(dao);
+			dao2.allClose(dao2);
 			return SUCCESS;
 		}
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 }

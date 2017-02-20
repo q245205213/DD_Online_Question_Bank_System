@@ -20,14 +20,14 @@ import java.util.Map;
 public class UploadRecordReturn extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
-
-	private Dao dao = new Dao();
-	private Dao2 dao2 = new Dao2();
 	HttpServletRequest req = ServletActionContext.getRequest();
 	HttpServletResponse res = ServletActionContext.getResponse();
 	Map<String, Object> session = ActionContext.getContext().getSession();
 	
 	public String uploadRecordReturn() throws Exception{
+
+		Dao dao = new Dao();
+		Dao2 dao2 = new Dao2();
 		
 		int i = 1;
 		String sql1 = "select userID from user where userAccount='"+session.get("username")+"'";
@@ -148,8 +148,12 @@ public class UploadRecordReturn extends ActionSupport {
 			String uploadRecord = "";
 			uploadRecords.add(uploadRecord);
 			session.put("uploadRecords",uploadRecords);
+			dao.allClose(dao);
+			dao2.allClose(dao2);
 			return SUCCESS;
 		}
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 }

@@ -83,6 +83,8 @@ public class AdminUploadRecord extends ActionSupport {
 			dao.executeUpdate(sql1);
 		}
 		aurr.adminUploadRecordReturn();
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return "success";
 	}
 

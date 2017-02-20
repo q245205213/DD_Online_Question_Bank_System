@@ -137,14 +137,9 @@ public class AdminAuditRecordReturn extends ActionSupport {
 			session.put("i", i);
 			++i;
 			
-		}/*
-		if (!rs2.first()) {
-			String adminAuditRecord = "";
-			adminAuditRecords.add(adminAuditRecord);
-			session.put("adminAuditRecords",adminAuditRecords);
-//			session.put("i", "");
-			return SUCCESS;
-		}*/
+		}
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 }

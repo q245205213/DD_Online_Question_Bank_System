@@ -49,6 +49,7 @@ public class AdminAuditPass extends ActionSupport {
 			int groupID = Integer.parseInt(rs2.getString(1));
 			String sql3 = "update question set groupID = ("+groupID+") where queID = " + queID;		
 			dao.executeUpdate(sql3);
+			
 		}
 		else {
 			String sql4 = "insert into `group`(group1,group2,group3) values('"+group1+"','"+group2+"','"+group3+"')";	
@@ -81,6 +82,8 @@ public class AdminAuditPass extends ActionSupport {
 			dao.executeUpdate(sql1);
 		}
 		aapr.adminAuditPassReturn();
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return "success";
 	}
 

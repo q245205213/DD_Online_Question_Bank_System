@@ -20,12 +20,12 @@ public class DeleteAdminUploadRecord extends ActionSupport{
 	
 	public String deleteAdminUploadRecord() throws Exception {
 
-
 		String queID = req.getParameter("queID"); 
 		System.out.println("queID的值是："+queID);
 		String sql = "delete from question where queID = " + queID;
 		dao.executeUpdate(sql);
 		aurr.adminUploadRecordReturn();
+		dao.allClose(dao);
 		return SUCCESS;
 	}
 }

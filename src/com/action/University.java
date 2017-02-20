@@ -17,12 +17,18 @@ import dao.Dao3;
 
 public class University extends ActionSupport{
 	private static final long serialVersionUID = 1L;
-
 	private Dao dao = new Dao();
 	private Dao2 dao2 = new Dao2();
 	private Dao3 dao3 = new Dao3();
+	private University u = new University();
 	HttpServletRequest req = ServletActionContext.getRequest();
 	HttpServletResponse res = ServletActionContext.getResponse();
+
+	public void close() {
+		dao.allClose(dao);
+		dao2.allClose(dao2);
+		dao3.allClose(dao3);
+	}
 	
 	@SuppressWarnings("resource")
 	public String university() throws Exception{
@@ -247,13 +253,27 @@ public class University extends ActionSupport{
 				universitys.add(university);
 				req.setAttribute("universitys", universitys);
 				switch (group2) {
-				case "大学必修课":return "group2_1";
-				case "信息科学与工程学院":return "group2_2";
-				case "经济管理学院":return "group2_3";
-				case "生命科学学院":return "group2_4";
-				case "工程学院":return "group2_5";
-				case "人文与法学学院":return "group2_6";
-				case "艺术学院":return "group2_7";
+				case "大学必修课":
+					u.close(); 
+					return "group2_1";
+				case "信息科学与工程学院":
+					u.close(); 
+					return "group2_2";
+				case "经济管理学院":
+					u.close(); 
+					return "group2_3";
+				case "生命科学学院":
+					u.close(); 
+					return "group2_4";
+				case "工程学院":
+					u.close(); 
+					return "group2_5";
+				case "人文与法学学院":
+					u.close(); 
+					return "group2_6";
+				case "艺术学院":
+					u.close(); 
+					return "group2_7";
 				default:break;
 				}
 			}
@@ -459,27 +479,56 @@ public class University extends ActionSupport{
 				universitys.add(university);
 				req.setAttribute("universitys", universitys);
 				switch (group2) {
-				case "大学必修课":return "group2_1";
-				case "信息科学与工程学院":return "group2_2";
-				case "经济管理学院":return "group2_3";
-				case "生命科学学院":return "group2_4";
-				case "工程学院":return "group2_5";
-				case "人文与法学学院":return "group2_6";
-				case "艺术学院":return "group2_7";
+				case "大学必修课":
+					u.close(); 
+					return "group2_1";
+				case "信息科学与工程学院":
+					u.close(); 
+					return "group2_2";
+				case "经济管理学院":
+					u.close(); 
+					return "group2_3";
+				case "生命科学学院":
+					u.close(); 
+					return "group2_4";
+				case "工程学院":
+					u.close(); 
+					return "group2_5";
+				case "人文与法学学院":
+					u.close(); 
+					return "group2_6";
+				case "艺术学院":
+					u.close(); 
+					return "group2_7";
 				default:break;
 				}
 			}
 		}
 		switch (group2) {
-		case "大学必修课":return "group2_1";
-		case "信息科学与工程学院":return "group2_2";
-		case "经济管理学院":return "group2_3";
-		case "生命科学学院":return "group2_4";
-		case "工程学院":return "group2_5";
-		case "人文与法学学院":return "group2_6";
-		case "艺术学院":return "group2_7";
+		case "大学必修课":
+			u.close(); 
+			return "group2_1";
+		case "信息科学与工程学院":
+			u.close(); 
+			return "group2_2";
+		case "经济管理学院":
+			u.close(); 
+			return "group2_3";
+		case "生命科学学院":
+			u.close(); 
+			return "group2_4";
+		case "工程学院":
+			u.close(); 
+			return "group2_5";
+		case "人文与法学学院":
+			u.close(); 
+			return "group2_6";
+		case "艺术学院":
+			u.close(); 
+			return "group2_7";
 		default:break;
 		}
+		u.close(); 
 		return "group2_1";
 	}
 

@@ -34,6 +34,19 @@ public class Dao3{
 		}
 		return -1;
 	}
+	
+	public void allClose(Dao3 dao) {
+		try {
+			if (rs.first()) {
+				dao.rs.close();
+			}
+			dao.stat.close();
+			dao.conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
 
 /*public class Dao {	

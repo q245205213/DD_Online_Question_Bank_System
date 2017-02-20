@@ -39,6 +39,7 @@ public class Comment extends ActionSupport{
 		dao.executeUpdate(sql2);
 		System.out.println("评论成功");
 		crr.commentRecordReturn();
+		dao.allClose(dao);
 		return SUCCESS;
 	}
 }

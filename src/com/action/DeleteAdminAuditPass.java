@@ -20,12 +20,12 @@ public class DeleteAdminAuditPass extends ActionSupport{
 	
 	public String deleteAdminAuditPass() throws Exception {
 
-
 		String queID = req.getParameter("queID"); 
 		System.out.println("queID的值是："+queID);
 		String sql = "delete from question where queID = " + queID;
 		dao.executeUpdate(sql);
 		aapr.adminAuditPassReturn();
+		dao.allClose(dao);
 		return SUCCESS;
 	}
 }

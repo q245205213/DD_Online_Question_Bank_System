@@ -246,6 +246,9 @@ public class PrimarySchool extends ActionSupport{
 				String primarySchool = "";
 				primarySchools.add(primarySchool);
 				req.setAttribute("primarySchools", primarySchools);
+				dao.allClose(dao);
+				dao2.allClose(dao2);
+				dao3.allClose(dao3);
 				return SUCCESS;
 			}
 		}
@@ -449,10 +452,13 @@ public class PrimarySchool extends ActionSupport{
 				String primarySchool = "";
 				primarySchools.add(primarySchool);
 				req.setAttribute("primarySchools", primarySchools);
+				dao.allClose(dao);
 				return SUCCESS;
 			}
 		}
-		
+
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 

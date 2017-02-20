@@ -25,7 +25,6 @@ public class UploadRecord extends ActionSupport {
 	HttpServletRequest req = ServletActionContext.getRequest();
 	HttpServletResponse res = ServletActionContext.getResponse();
 	Map<String, Object> session = ActionContext.getContext().getSession();
-	
 
 	private String uplType;
 	public String getUplType(){
@@ -101,6 +100,8 @@ public class UploadRecord extends ActionSupport {
 		String sql8 = "insert into upload_admin select * from upload where uplID = '" + uplID +"'";		
 		dao.executeUpdate(sql8);
 		urr.uploadRecordReturn();
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return "success";
 	}
 

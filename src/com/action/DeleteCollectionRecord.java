@@ -27,6 +27,7 @@ public class DeleteCollectionRecord extends ActionSupport{
 		String sql = "delete from collection where colID = " + colID;
 		dao.executeUpdate(sql);
 		crr.collectionRecordReturn();
+		dao.allClose(dao);
 		return SUCCESS;
 	}
 }

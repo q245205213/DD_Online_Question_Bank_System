@@ -35,14 +35,14 @@ public class AdminUploadRecordReturn extends ActionSupport {
 		ResultSet rs1 = dao.executeQuery(sql1);
 		rs1.first();
 		System.out.println("前进1");
-		int adminID = Integer.parseInt(rs1.getString(1));	
+		int adminID = Integer.parseInt(rs1.getString(1));
 		
 		String sql2 = "select * from question where adminID = '"+adminID+"' order by queID desc";
+		System.out.println("adminID="+adminID);
 		ResultSet rs2 = dao.executeQuery(sql2);
 		
 		List<String > adminUploadRecords = new ArrayList<String>(); 
 		while (rs2.next()) {
-			System.out.println("前进33");
 			String groupID = rs2.getString(4);
 			String sql3 = "select * from `group` where groupID='"+groupID+"'";
 			ResultSet rs3 = dao2.executeQuery(sql3);
@@ -159,8 +159,12 @@ public class AdminUploadRecordReturn extends ActionSupport {
 			adminUploadRecords.add(adminUploadRecord);
 			session.put("adminUploadRecords",adminUploadRecords);
 //			session.put("i", "");
+			dao.allClose(dao);
+			dao2.allClose(dao2);
 			return SUCCESS;
 		}
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 }

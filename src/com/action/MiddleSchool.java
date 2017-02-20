@@ -246,6 +246,9 @@ public class MiddleSchool extends ActionSupport{
 				String middleSchool = "";
 				middleSchools.add(middleSchool);
 				req.setAttribute("middleSchools", middleSchools);
+				dao.allClose(dao);
+				dao2.allClose(dao2);
+				dao3.allClose(dao3);
 				return SUCCESS;
 			}
 		}
@@ -449,10 +452,13 @@ public class MiddleSchool extends ActionSupport{
 				String middleSchool = "";
 				middleSchools.add(middleSchool);
 				req.setAttribute("middleSchools", middleSchools);
+				dao.allClose(dao);
 				return SUCCESS;
 			}
 		}
-		
+
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 

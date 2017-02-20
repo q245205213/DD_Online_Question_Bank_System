@@ -19,7 +19,6 @@ import dao.Dao;
 
 public class UserInformation extends ActionSupport{
 	private static final long serialVersionUID = 1L;
-	private Dao dao = new Dao();
 	HttpServletRequest req = ServletActionContext.getRequest();
 	HttpServletResponse res = ServletActionContext.getResponse();
 	Map<String, Object> session = ActionContext.getContext().getSession();
@@ -77,6 +76,7 @@ public class UserInformation extends ActionSupport{
 
 	public String userInformation() throws Exception{
 
+		Dao dao = new Dao();
 		String name = URLDecoder.decode(getName(), "utf-8"); 
 //		String age = URLDecoder.decode(getAge, "utf-8"); 
 		String sex = URLDecoder.decode(getSex(), "utf-8"); 
@@ -156,7 +156,8 @@ public class UserInformation extends ActionSupport{
 			session.put("test", infoReturn);
 			System.out.println("infoReturn的值是："+infoReturn);
 		}
-		
+
+		dao.allClose(dao);
 		return "success";
 	}
 }

@@ -16,14 +16,19 @@ import dao.Dao2;
 import dao.Dao3;
 
 public class LookupQuestion extends ActionSupport{
-
 	private static final long serialVersionUID = 1L;
 	private Dao dao = new Dao();
 	private Dao2 dao2 = new Dao2();
 	private Dao3 dao3 = new Dao3();
+	private LookupQuestion lq = new LookupQuestion();
 	HttpServletRequest req = ServletActionContext.getRequest();
 	HttpServletResponse res = ServletActionContext.getResponse();
 	
+	public void close() {
+		dao.allClose(dao);
+		dao2.allClose(dao2);
+		dao3.allClose(dao3);
+	}
 	
 	public String lookupQuestion() throws Exception {
 
@@ -233,32 +238,41 @@ public class LookupQuestion extends ActionSupport{
 		switch (group1) {
 		case "小学":
 			req.setAttribute("primarySchools", lookupQuestions);
+			lq.close();
 			return "primarySchool";
 		case "中学":
 			req.setAttribute("middleSchools", lookupQuestions);
+			lq.close();
 			return "middleSchool";
 		case "大学":
 			switch (group2) {
 			case "大学必修课":
 				req.setAttribute("universitys", lookupQuestions);
+				lq.close();
 				return "university";
 			case "信息科学与工程学院":
 				req.setAttribute("universitys", lookupQuestions);
+				lq.close();
 				return "university2";
 			case "经济管理学院":
 				req.setAttribute("universitys", lookupQuestions);
+				lq.close();
 				return "university3";
 			case "生命科学学院":
 				req.setAttribute("universitys", lookupQuestions);
+				lq.close();
 				return "university4";
 			case "工程学院 ":
 				req.setAttribute("universitys", lookupQuestions);
+				lq.close();
 				return "university5";
 			case "人文与法学学院":
 				req.setAttribute("universitys", lookupQuestions);
+				lq.close();
 				return "university6";
 			case "艺术学院":
 				req.setAttribute("universitys", lookupQuestions);
+				lq.close();
 				return "university7";
 
 			default:
@@ -266,11 +280,13 @@ public class LookupQuestion extends ActionSupport{
 			}
 		case "社会职业":
 			req.setAttribute("socialProfessions", lookupQuestions);
+			lq.close();
 			return "socialProfession";
 
 		default:
 			break;
 		}
+		lq.close();
 		return SUCCESS;
 	}
 

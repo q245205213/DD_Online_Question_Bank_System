@@ -61,8 +61,12 @@ public class CollectionRecordReturn extends ActionSupport{
 			String collectionRecord = "";
 			collectionRecords.add(collectionRecord);
 			session.put("collectionRecords",collectionRecords);
+			dao.allClose(dao);
+			dao2.allClose(dao2);
 			return SUCCESS;
 		}
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 }

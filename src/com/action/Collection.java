@@ -30,6 +30,7 @@ public class Collection extends ActionSupport{
 		String sql2 = "insert into collection(userID,queID) values('"+userID+"','"+queID+"')";
 		dao.executeUpdate(sql2);
 		System.out.println("收藏成功");
+		dao.allClose(dao);
 		return;
 	}
 }

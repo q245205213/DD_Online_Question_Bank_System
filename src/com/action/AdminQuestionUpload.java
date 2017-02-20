@@ -88,6 +88,7 @@ public class AdminQuestionUpload extends ActionSupport {
 		}
 		
 		aurr.adminUploadRecordReturn();
+		dao.allClose(dao);
 		return "success";
 	}
 }

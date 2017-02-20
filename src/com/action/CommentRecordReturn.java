@@ -51,10 +51,9 @@ public class CommentRecordReturn extends ActionSupport{
 			"	</div>";		
 			commentRecords.add(commentRecord);
 			session.put("commentRecords", commentRecords);
-			
-			
-			
 		}
+		dao.allClose(dao);
+		dao2.allClose(dao2);
 		return SUCCESS;
 	}
 }

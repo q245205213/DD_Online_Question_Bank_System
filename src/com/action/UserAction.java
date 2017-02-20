@@ -16,7 +16,6 @@ import com.action.AdminAuditRecordReturn;
 
 public class UserAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
-	private Dao dao = new Dao();
 	private UploadRecordReturn urr = new UploadRecordReturn();
 	private AdminAuditRecordReturn aarr = new AdminAuditRecordReturn();
 	HttpServletRequest req = ServletActionContext.getRequest();
@@ -51,6 +50,7 @@ public class UserAction extends ActionSupport{
 	
 	// 用户登陆
 	public void login(){
+		Dao dao = new Dao();
 		if (getAccount().equals("admin")) {
 			System.out.println(getAccount()+"in");
 			String sql = "select * from admin where adminAccount='" + getAccount()+"'";
@@ -65,6 +65,7 @@ public class UserAction extends ActionSupport{
 //					审核用户上传题目
 					aarr.adminAuditRecordReturn();
 				}
+				dao.allClose(dao);
 				return;
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -108,12 +109,14 @@ public class UserAction extends ActionSupport{
 				else {
 					res.getWriter().write(getAccount());
 				}
-				
+
+				dao.allClose(dao);
 				return;
 			}
 			else {
 				System.out.println(getAccount()+" out");
 				res.getWriter().write("false");
+				dao.allClose(dao);
 				return;
 			}
 			
@@ -129,11 +132,14 @@ public class UserAction extends ActionSupport{
 		/*if(getPassword()!=getPassword1()){
 			return "error";
 		}*/
+		Dao dao = new Dao();
 		System.out.println("zheshiyigecshi");
 		if (getPassword()==null||getPassword().equals("")) {System.out.println("1"+getPassword1());
+			dao.allClose(dao);
 			return;
 		}
 		else if (!getPassword().equals(getPassword1())) {System.out.println("wwwww");
+			dao.allClose(dao);
 			return;
 		}
 		else{
@@ -153,17 +159,20 @@ public class UserAction extends ActionSupport{
 				String sql3 = "insert into userinfo(userID) values('"+rs.getString(1)+"')";
 				int ii = dao.executeUpdate(sql3);
 				System.out.println("ii的值是:"+ii);
+				dao.allClose(dao);
 				return;
 			}
 			else {
 				res.getWriter().write("bbb");
 				System.out.println("bbb");
 			}
+			dao.allClose(dao);
 			return;
 		}
 	}
 	// 检测是否存在用户名
 	public void checkUser(){
+		Dao dao = new Dao();
 		String sql = "select userAccount from user where userAccount='"+getAccount()+"'";
 		System.out.println(getAccount());
 		ResultSet rs = dao.executeQuery(sql);
@@ -172,6 +181,7 @@ public class UserAction extends ActionSupport{
 			if (rs.next()&&getAccount().length()!=0) {
 				System.out.println("得到值"+rs);
 				res.getWriter().write(getAccount());
+				dao.allClose(dao);
 				return;
 			}
 		} catch (Exception e) {

@@ -20,11 +20,11 @@ public class DeleteUploadRecord extends ActionSupport{
 	
 	public String deleteUploadRecord() throws Exception {
 
-
 		String uplID = req.getParameter("uplID"); 
 		String sql = "delete from upload where uplID = " + uplID;
 		dao.executeUpdate(sql);
 		urr.uploadRecordReturn();
+		dao.allClose(dao);
 		return SUCCESS;
 	}
 }

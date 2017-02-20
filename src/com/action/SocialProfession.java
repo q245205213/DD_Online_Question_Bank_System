@@ -17,15 +17,15 @@ import dao.Dao3;
 
 public class SocialProfession extends ActionSupport{
 	private static final long serialVersionUID = 1L;
-
-	private Dao dao = new Dao();
-	private Dao2 dao2 = new Dao2();
-	private Dao3 dao3 = new Dao3();
 	HttpServletRequest req = ServletActionContext.getRequest();
 	HttpServletResponse res = ServletActionContext.getResponse();
 	
 	@SuppressWarnings("resource")
 	public String socialProfession() throws Exception{
+		Dao dao = new Dao();
+		Dao2 dao2 = new Dao2();
+		Dao3 dao3 = new Dao3();
+		
 		int i = 1;
 		String group1 = req.getParameter("group1");
 		String group2 = req.getParameter("group2");
@@ -246,6 +246,9 @@ public class SocialProfession extends ActionSupport{
 				String socialProfession = "";
 				socialProfessions.add(socialProfession);
 				req.setAttribute("primarySchools", socialProfessions);
+				dao.allClose(dao);
+				dao2.allClose(dao2);
+				dao3.allClose(dao3);
 				return SUCCESS;
 			}
 		}
@@ -449,10 +452,16 @@ public class SocialProfession extends ActionSupport{
 				String socialProfession = "";
 				socialProfessions.add(socialProfession);
 				req.setAttribute("socialProfessions", socialProfessions);
+				dao.allClose(dao);
+				dao2.allClose(dao2);
+				dao3.allClose(dao3);
 				return SUCCESS;
 			}
 		}
-		
+
+		dao.allClose(dao);
+		dao2.allClose(dao2);
+		dao3.allClose(dao3);
 		return SUCCESS;
 	}
 
